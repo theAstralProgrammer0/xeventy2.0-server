@@ -67,7 +67,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://x2h.vercel.app",
     "https://localhost:3000",
     "http://localhost:3000",
-    "https://xeventy2-0-server.onrender.com/",
+    "https://xeventy2-0-server.onrender.com",
 ]
 
 REST_FRAMEWORK = {
