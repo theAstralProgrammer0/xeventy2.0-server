@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ["xeventy2-0-server.onrender.com"]
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        "LOCATION": "redis://red-cutkt82j1k6c738deq50:6379",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
