@@ -25,9 +25,7 @@ SECRET_KEY = 'django-insecure-iqoyqfl41d4jw8!4ls_c6sz*k$v14*36)3pv%+exmkxybq$n@a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-        'https://xeventy2-0-server.onrender.com',
-    ]
+ALLOWED_HOSTS = ['https://xeventy2-0-server.onrender.com/']
 
 
 # Application definition
@@ -69,6 +67,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://x2h.vercel.app",
     "https://localhost:3000",
     "http://localhost:3000",
+    "https://xeventy2-0-server.onrender.com/",
 ]
 
 REST_FRAMEWORK = {
