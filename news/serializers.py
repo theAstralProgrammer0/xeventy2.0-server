@@ -10,7 +10,7 @@ class NewsArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewsArticle
-        fields = ['id', 'title', 'author', 'published_at', 'timeline', 'content']
+        fields = ['id', 'title', 'author', 'published_at', 'timeline', 'article_url']
 
     def get_timeline(self, obj):
         # Instantiated obj calls d method here

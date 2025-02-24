@@ -5,7 +5,7 @@ from django.utils import timezone
 class NewsArticle(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
-    content = models.TextField(blank=True, null=True)
+    article_url = models.URLField(help_text="News Article link")
     published_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
