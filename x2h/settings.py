@@ -24,6 +24,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
+    'blog',
     'news',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -106,7 +107,9 @@ CACHES = {
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
-    ]
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'blog.pagination.HATEOASPagination',
+    'PAGE_SIZE': 10,
 }
 
 
