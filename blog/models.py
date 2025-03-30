@@ -8,8 +8,8 @@ from django.db import models
 class Article(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    image_src = models.URLField(max_length=500)
-    blog_url = models.URLField(max_length=500)
+    image_src = models.URLField()
+    blog_url = models.URLField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
