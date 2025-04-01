@@ -48,3 +48,4 @@ xeventy2.0-server/
 │   └── urls.py
 │
 └── static/                # static files for Django admin page styling
+```

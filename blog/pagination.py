@@ -14,8 +14,9 @@ class HATEOASPagination(PageNumberPagination):
         return Response({
             'links': {
                 'next': self.get_next_link(),
-                'prev': self.get_prev_link(),
+                'previous': self.get_previous_link(),
             },
             'count': self.page.paginator.count,
             'results': data
         })
+
