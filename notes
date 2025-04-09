@@ -1,0 +1,6 @@
+# Notes while building
+
+- I realized I can exclude the class pagination_class which is a part of the
+  payload returned to the frontend for all apps in the django backend based on
+  the fact that it was part of the main project's (x2h's) settings.py fields in
+  the REST_FRAMEWORK array

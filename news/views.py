@@ -8,6 +8,7 @@ from .serializers import NewsArticleSerializer, VideoNewsSerializer
 class LatestNewsArticleList(generics.ListAPIView):
     serializer_class = NewsArticleSerializer
     
+    pagination_class = None
     def get_queryset(self):
         # Attempt to fetch cached news articles
         cached_articles = cache.get("latest_news_articles")
@@ -22,6 +23,7 @@ class LatestNewsArticleList(generics.ListAPIView):
 class LatestVideoNews(generics.RetrieveAPIView):
     serializer_class = VideoNewsSerializer
 
+    pagination_class = None
     def get_object(self):
         # Attempt to get cached news video
         cached_video = cache.get("latest_video_news")
