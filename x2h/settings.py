@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'blog',
     'news',
+    'training',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -107,6 +108,9 @@ CACHES = {
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'rest_framework.filters.SearchFilter',
     ],
     'DEFAULT_PAGINATION_CLASS': 'blog.pagination.HATEOASPagination',
     'PAGE_SIZE': 10,
