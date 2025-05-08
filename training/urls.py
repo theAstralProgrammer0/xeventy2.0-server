@@ -6,3 +6,4 @@ urlpatterns = [
     path('videos/<int:pk>/', VideoRetrieveView.as_view(), name='video-detail'),
     path('videos/<int:pk>/zoom/', zoom_join, name='video-zoom-join'),
 ]
+
