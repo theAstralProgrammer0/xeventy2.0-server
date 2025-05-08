@@ -32,7 +32,7 @@ class VideoListCreateView(generics.ListCreateAPIView):
             return Response(cached)
 
         response = super().list(request, *args, **kwargs)
-        cache.set(cache_key, response.data, 300) # cache for 5 mins
+        cache.set(cache_key, response.data, 1800) # cache for 30 mins
         return response
 
 
@@ -56,7 +56,7 @@ class VideoRetrieveView(generics.RetrieveAPIView):
             return Response(cached)
 
         response = super().retrieve(request, *args, **kwargs)
-        cache.set(cache_key, response.data, 300)
+        cache.set(cache_key, response.data, 1800) # cache for 30 m
         return response
 
 
