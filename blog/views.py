@@ -16,6 +16,8 @@ from .pagination import HATEOASPagination
 class ArticleListView(generics.ListAPIView):
     queryset = Article.objects.all().order_by('-created_at')
     serializer_class = ArticleSerializer
+
+    # ENABLE PAGINATION
     pagination_class = HATEOASPagination
 
     def list(self, request, *args, **kwargs):
@@ -28,6 +30,6 @@ class ArticleListView(generics.ListAPIView):
 
         response = super().list(request, *args, **kwargs)
         # Cache the paginated response for 5 minutes (300 seconds)
-        cache.set(cache_key, response.data, 300)
+        cache.set(cache_key, response.data, 1800)
         return response
 
