@@ -104,6 +104,7 @@ CACHES = {
     }
 }
 
+SILENCED_SYSTEM_CHECKS = ["rest_framework.W001"]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -112,8 +113,9 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'rest_framework.filters.SearchFilter',
     ],
-    'DEFAULT_PAGINATION_CLASS': 'blog.pagination.HATEOASPagination',
-    'PAGE_SIZE': 10,
+    #  DISABLED DEFAULT PAGINATION USING HATEOASPagination
+    # 'DEFAULT_PAGINATION_CLASS': 'blog.pagination.HATEOASPagination',
+    # 'PAGE_SIZE': 10,
 }
 
 

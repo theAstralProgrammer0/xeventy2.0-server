@@ -20,8 +20,20 @@ class ArticleListView(generics.ListAPIView):
     # ENABLE PAGINATION
     pagination_class = HATEOASPagination
 
+    # OVERRIDE DEFAULT PAGE SIZE
+    def get_paginate_by(self, queryset):
+        """
+        Get 'page_size' from request
+        If None, use 10 as default page size for pagination
+        """
+        return self.request.GET.get('page_size', 4) 
+
+    # REDIS CACHING AND RETURN
     def list(self, request, *args, **kwargs):
-        # Use the 'page' query parameter as part of the cache key.
+        """
+        Use the 'page' query parameter as part of the cache key.
+        If None, use 1
+        """
         page = request.query_params.get('page', 1)
         cache_key = f'articles_page_{page}'
         cached_response = cache.get(cache_key)
